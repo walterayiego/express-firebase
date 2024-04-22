@@ -1,0 +1,17 @@
+{
+  "name": "express-firebase",
+  "version": "1.0.0",
+  "description": "A simple CRUD (Create, Read, Update, Delete) API project utilizing Firebase as the database. Implements basic API endpoints for managing data operations efficiently",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "firebase": "^10.11.0",
+    "firebase-admin": "^12.1.0"
+  }
+}
