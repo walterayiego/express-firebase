@@ -2,6 +2,7 @@ const express = require("express");
 const port = 3000;
 const app = express();
 const { getData } = require("./firebase/firestoredb.js");
+const { unsubscribe } = require("./firebase/authentication.js"); 
 
 app.use(express.json());
 

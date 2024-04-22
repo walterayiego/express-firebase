@@ -1,9 +1,5 @@
 const { initializeApp } = require("firebase/app");
-const {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} = require("firebase/auth");
+const { getAuth } = require("firebase/auth");
 const { getStorage } = require("firebase/storage");
 const { getFirestore } = require("firebase/firestore");
 const { getMessaging } = require("firebase/messaging");
@@ -26,40 +22,6 @@ const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 // const storage = getStorage(firebaseApp);
 const db = getFirestore(firebaseApp);
-// const messaging = getMessaging(firebaseApp);
 
 // Export Firebase services
-
-const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-  const uid = currentUser?.uid;
-  if (uid) {
-    // onSnapshot(doc(firestore, "users", uid), (doc) => {
-    console.log(uid, "User Data");
-    // });
-  } else {
-    console.log("Not Signed in");
-  }
-});
-
-const createUser = async () => {
-  await createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in
-    })
-    .catch((error) => console.log(error));
-};
-
-const sigin = async (email, password) => {
-  await signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      userData.uid = userCredential.user.uid;
-
-      console.log("Success!! Signed In", userData);
-    })
-    .catch((error) => console.log(error));
-};
-
-const userData = {};
-
-module.exports = { auth, db, unsubscribe, createUser, sigin, userData };
+module.exports = { auth, db };
